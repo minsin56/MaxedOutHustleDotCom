@@ -6,7 +6,8 @@
     "express": "*"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "start:prod": "node index.js"
   },
   "main": "index.js",
   "author": "minsin56",
