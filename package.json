@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "farts",
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "nodemailer": "^6.4.13"
   },
   "scripts": {
     "start": "node index.js",
