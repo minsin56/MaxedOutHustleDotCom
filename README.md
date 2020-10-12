@@ -1,42 +1,69 @@
-# Angular-CLI-Heroku
+# Basic CRUD App with Node + Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4 but updated to 9.0.2
+This example app shows how to create a Node.js API and display its data with an Angular UI.
 
-## Yarn
+This project was bootstrapped with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-Run `npm install -g yarn` then `yarn install`.
+**Prerequisites**: [Node.js](https://nodejs.org/en/).
 
-If you want to use npm instead of yarn, change the yarn declaraction inside package.json for `npm : "3.10.9"` and delete `yarn.lock`.
+## Getting Started
 
-## Development server
+To install this example application, run the following commands:
 
-Run `ng serve` or `npm run dev` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+git clone git@github.com:oktadeveloper/angular-node-crud-example.git
+cd angular-node-crud-example
+```
 
-## Code scaffolding
+This will get a copy of the project install locally. You will need to set up some environment variables before the app will run properly.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+To integrate Okta's Identity Platform for user authentication, you'll first need to:
 
-## Deploy on Heroku
+* [Sign up for a free Okta Developer account](https://www.okta.com/developer/signup/)
+* You will get a URL similar to `https://dev-123456.oktapreview.com`.
+  * Save this URL for later
+  * You will also use this URL to login to your Okta account
 
-First you need heroku toolbelt `https://devcenter.heroku.com/articles/heroku-cli#download-and-instal`.
+You will need to create an application in Okta:
 
-Run `heroku create` to create a new application on Heroku.
+* Log in to your Okta account, then navigate to **Applications** and click the **Add Application** button
+* Select **Single-Page App** and click **Next**
+* Give your application a name (e.g. "My Angular App")
+* Change the **Base URI** to `http://localhost:4200/` and the **Login redirect URI** to `http://localhost:4200/implicit/callback`, then click **Done**
+* Save your **Client ID** for later
 
-Run `npm run deploy` Heroku will handle the bundle of the application to `dist/` folder and run it via express.
+Your Okta application should have settings similar to the following:
 
-## Build
+![Okta Application Settings](images/okta-app-settings.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Now create a file called `.env.js` in the `src/environments` folder of the project, then export the following variables, replacing the values with your own from the previous steps.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**.env.local**
+```javascript
+module.exports = {
+  oktaOrgURL: 'https://{yourOktaOrgUrl}',
+  oktaClientId: '{yourClientId}',
+};
+```
 
-## Running end-to-end tests
+Now you can run both the Node API server and the Angular frontend with the same command:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+```bash
+npm start
+```
 
-## Further help
+## Links
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This example uses the following libraries provided by Okta:
+
+* [Okta JWT Verifier](https://github.com/okta/okta-oidc-js/tree/master/packages/jwt-verifier)
+* [Okta Angular SDK](https://github.com/okta/okta-oidc-js/tree/master/packages/okta-angular)
+
+## Help
+
+Please [raise an issue](https://github.com/oktadeveloper/angular-node-crud-example/issues) if you find a problem with the example application, or visit our [Okta Developer Forums](https://devforum.okta.com/). You can also email [developers@okta.com](mailto:developers@okta.com) if would like to create a support ticket.
+
+## License
+
+Apache 2.0, see [LICENSE](LICENSE).
