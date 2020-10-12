@@ -1,19 +1,15 @@
 {
-  "name":"maxed-out-hustle",
-  "version":"1.0.0",
+  "name": "app",
+  "version": "1.0.0",
   "description": "farts",
   "dependencies": {
     "express": "*"
   },
-  "main":"index.js",
-  "repository": {
-    "type": "git",
-    "url": ""
+  "scripts": {
+    "start": "node index.js"
   },
+  "main": "index.js",
   "author": "minsin56",
   "license": "WTFPL",
-  "bugs":{
-    "url": ""
-  },
   "homepage": "/"
 }
