@@ -1,0 +1,12 @@
+<mat-drawer-container style="width: 100%; height: 100%">
+  <mat-drawer style="width: 20%;" mod="side" [opened]="Opened" (opened)="Opened = true" (closed)="Opened = false">
+    <img src="assets/Banner.png" style="width: 100%"/>
+    <p routerLink="/" routerLinkActive="active">Home</p>
+    <p routerLink="about-us" routerLinkActive="active">About Us</p>
+    <p routerLink="/contact" routerLinkActive="active">Contact</p>
+    <p routerLink="/social" routerLinkActive="active">Social Media</p>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>
