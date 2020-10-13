@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "start:prod": "node index.js",
+    "start:prod": "node index.js", 
     "build" : "mkdir -p dist/js -m -o dist/js/index.js"
   },
   "main": "index.js",
