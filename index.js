@@ -9,11 +9,11 @@ const Server = http.createServer((Req,Resp) =>
     const Messge = headers['message'];
 
     Resp.setHeader('Access-Control-Allow-Origin','*');
-
+    Resp.write("hello");
 
     console.log("Attempting to send an email");
     SendMail().catch(console.error);
-});
+}).listen(3000,() => console.log("Server Started"));
 
 async function SendMail()
 {
@@ -41,5 +41,3 @@ async function SendMail()
 
     console.log(Info.messageId);
 }
-
-Server.listen(8080);
