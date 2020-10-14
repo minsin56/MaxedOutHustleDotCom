@@ -1,0 +1,25 @@
+{
+  "name": "maxedouthustlebackend",
+  "version": "1.0.0",
+  "description": "backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minsin56/MaxedOutHustleDotCom.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "minsin56",
+  "license": "UNLICENCED",
+  "bugs": {
+    "url": "https://github.com/minsin56/MaxedOutHustleDotCom/issues"
+  },
+  "homepage": "https://github.com/minsin56/MaxedOutHustleDotCom#readme",
+  "dependencies": {
+    "nodemailer": "^6.4.13"
+  }
+}
