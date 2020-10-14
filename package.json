@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/minsin56/MaxedOutHustleDotCom#readme",
   "dependencies": {
-    "nodemailer": "^6.4.13"
+    "nodemailer": "^6.4.13",
+    "xmlhttprequest": "^1.8.0"
   }
 }

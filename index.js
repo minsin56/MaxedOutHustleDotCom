@@ -1,5 +1,7 @@
 const NodeMailer = require("nodemailer");
 const http = require("http");
+const {Email} = require("./smtp");
+SendMail().catch(console.error);
 
 const Server = http.createServer((Req,Resp) => 
 {
@@ -18,11 +20,10 @@ const Server = http.createServer((Req,Resp) =>
 async function SendMail()
 {
     console.log("Starting To send email");
-    let Transporter = nodemailer.createTransport(
+    let Transporter = NodeMailer.createTransport(
         {
             host: 'smtp.hostinger.com',
             port: 587,
-            secure: false,
             auth: 
             {
                 user: 'contact@maxedouthustle.com',
@@ -37,7 +38,15 @@ async function SendMail()
             subject: "hello",
             text: "hello world?",
             html: "<b>hello world?</b>"
+        },function(Err,Info)
+        {
+            if(Err)
+            {
+                console.log(Err);
+            }
+            else
+            {
+                console.log(Info);
+            }
         });
-
-    console.log(Info.messageId);
 }
