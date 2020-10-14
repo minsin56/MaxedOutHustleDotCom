@@ -8,6 +8,8 @@ const Server = http.createServer((Req,Resp) =>
     const To = headers['to'];
     const Messge = headers['message'];
 
+    Resp.setHeader('Access-Control-Allow-Origin','*');
+
     SendMail().catch(console.error);
 });
 
