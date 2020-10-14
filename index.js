@@ -10,12 +10,14 @@ const Server = http.createServer((Req,Resp) =>
 
     Resp.setHeader('Access-Control-Allow-Origin','*');
 
+
+    console.log("Attempting to send an email");
     SendMail().catch(console.error);
 });
 
 async function SendMail()
 {
-    
+    console.log("Starting To send email");
     let Transporter = nodemailer.createTransport(
         {
             host: 'smtp.hostinger.com',
