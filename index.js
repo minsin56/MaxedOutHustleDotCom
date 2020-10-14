@@ -27,14 +27,14 @@ async function SendMail()
             auth: 
             {
                 user: 'contact@maxedouthustle.com',
-                pass: 'Jackson1'
+                pass: 'fucktrump420'
             }
         });
     
     let Info = await Transporter.sendMail(
         {
             from: 'contact@maxedouthustle.com',
-            to: "castrovincent985@gmail.com",
+            to: "contact@maxedouthustle.com",
             subject: "hello",
             text: "hello world?",
             html: "<b>hello world?</b>"
