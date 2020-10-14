@@ -13,7 +13,7 @@ const Server = http.createServer((Req,Resp) =>
 
     console.log("Attempting to send an email");
     SendMail().catch(console.error);
-}).listen(3000,() => console.log("Server Started"));
+}).listen(process.env.PORT || 5000,() => console.log("Server Started"));
 
 async function SendMail()
 {
